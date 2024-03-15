@@ -1,3 +1,4 @@
+package Person;
 
 public class Person { // immodificabile con l'aggiunta di final - non posso fare il metodo set!
    
