@@ -3,6 +3,7 @@ package oo_Circle;
 public class Circle {
 
     private double r;
+    private final static double PI = 3.14;
 
     public Circle(double r) {
         this.r = r;
@@ -16,16 +17,12 @@ public class Circle {
         return r;
     }
 
-    public double getAreaC(){
-        double pi = 3.14;
-        double AC = r * r * pi;
-        return AC;
+    public double area(){      
+        return r * r * PI;
     }
     
-    public double getCircumference(){
-        double pi = 3.14;
-        double C = 2 * r * pi;
-        return C;
+    public double circumference(){        
+        return 2 * r * PI;
     }
 
     

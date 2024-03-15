@@ -2,37 +2,35 @@ package oo_ExRectangle;
 
 public class Rectangle {
 
-    private final int B;
+    private final int b;
     private final int h;
 
     public Rectangle(int b, int h) {
-        B = b;
+        this.b = b;
         this.h = h;
     }
 
     public int getB() { // Leggo il valore della Base
-        return B;
+        return b;
     }
 
     public int getH() { // Leggo il valore dell'altezza
         return h;
     }
 
-    public int getArea() {// per calcolare l'Area
-        int A = B * h;
-        return A;
+    public int area() {// per calcolare l'Area
+        return b * h;
     }
 
-    public int getPerimeter() { // per calcolare il Perimetro
-        int P = 2 * (B + h);
-        return P;
+    public int perimeter() { // per calcolare il Perimetro
+        return 2 * (b + h);
     }
 
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + B;
+        result = prime * result + b;
         result = prime * result + h;
         return result;
     }
@@ -46,7 +44,7 @@ public class Rectangle {
         if (getClass() != obj.getClass())
             return false;
         Rectangle other = (Rectangle) obj;
-        if (B != other.B)
+        if (b != other.b)
             return false;
         if (h != other.h)
             return false;
@@ -55,6 +53,6 @@ public class Rectangle {
 
     @Override
     public String toString() {
-        return "Rectangle [B=" + B + ", h=" + h + "]";
+        return "Rectangle [B=" + b + ", h=" + h + "]";
     }
 }

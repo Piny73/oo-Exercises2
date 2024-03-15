@@ -7,7 +7,7 @@ public class AppRectangle {
         Rectangle rectangle = new Rectangle(7, 10);
 
         System.out.println(rectangle.toString());
-        System.out.println("L'Area del rettangolo è: " + rectangle.getArea());
-        System.out.println("Il Perimetro del rettangolo è: " + rectangle.getPerimeter());
+        System.out.println("L'Area del rettangolo è: " + rectangle.area());
+        System.out.println("Il Perimetro del rettangolo è: " + rectangle.perimeter());
     }
 }
