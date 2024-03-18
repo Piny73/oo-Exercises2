@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 public class AppEventi {
     public static void main(String[] args) {
 
-        System.out.println("Benventuo nella app EVENTI: "); 
+        System.out.println("Benventuo negli EVENTI"); 
         
         Evento event = new Evento("Concerto di musica da camera", "Ravello", "Musica classica eseguita da artisti d'eccezione!", LocalDateTime.of(2024, 8, 15, 20, 30));
         Partecipanti p;
