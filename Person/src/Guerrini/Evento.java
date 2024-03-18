@@ -1,6 +1,7 @@
 package Guerrini;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 public class Evento {
 
@@ -9,7 +10,23 @@ public class Evento {
     private String description = "";
     private LocalDateTime dateandtime;
 
-   
+    private ArrayList<Long> listIdPart = new ArrayList<>();
+
+    public boolean addIdPartecipant(long id) {
+
+        for (long i : listIdPart) {
+            if (i == id)
+                ;
+            {
+                System.out.println("id già presente!");
+                return false;
+            }
+        }
+        // aggiungo alla lista
+        listIdPart.add(id);
+        System.out.println("id aggiunto!");
+        return true;
+    }
 
     public Evento(String eventitle, String location, String description, LocalDateTime dateandtime) {
         this.eventitle = eventitle;
@@ -17,65 +34,34 @@ public class Evento {
         this.description = description;
         this.dateandtime = dateandtime;
     }
-    
+
     public Evento(String eventitle, String location) {
         this.eventitle = eventitle;
         this.location = location;
     }
 
-
-
     public String getEventitle() {
         return eventitle;
     }
-
-
-
 
     public void setEventitle(String eventitle) {
         this.eventitle = eventitle;
     }
 
-
-
-
     public String getLocation() {
         return location;
     }
-
-
-
 
     public void setLocation(String location) {
         this.location = location;
     }
 
-
-
-
     public String getDescription() {
         return description;
     }
 
-
-
-
     public void setDescription(String description) {
         this.description = description;
-    }
-
-
-
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((eventitle == null) ? 0 : eventitle.hashCode());
-        result = prime * result + ((location == null) ? 0 : location.hashCode());
-        result = prime * result + ((description == null) ? 0 : description.hashCode());
-        result = prime * result + ((dateandtime == null) ? 0 : dateandtime.hashCode());
-        return result;
     }
 
     @Override
@@ -124,5 +110,4 @@ public class Evento {
         this.dateandtime = dateandtime;
     }
 
-    
 }

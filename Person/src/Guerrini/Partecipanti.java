@@ -6,17 +6,20 @@ public class Partecipanti {
     private String firstname = "";
     private String email = "";
     private String phone = "";
+    private long id;
     
     public Partecipanti(String lastname, String firstname, String email, String phone) {
         this.lastname = lastname;
         this.firstname = firstname;
         this.email = email;
         this.phone = phone;
+        this.id = hashCode();
     }
 
     public Partecipanti(String lastname, String phone) {
         this.lastname = lastname;
         this.phone = phone;
+        this.id = hashCode();
     }
 
     public String getLastname() {
@@ -51,47 +54,23 @@ public class Partecipanti {
         this.phone = phone;
     }
 
-    @Override
-    public int hashCode() {
-        final int prime = 31;
+    public long getId (){
+        return id;
+    }
+
+    
+
+    
+    public int creaId() {
+        double percRnd = Math.random(); 
+        double idRnd = percRnd * 10;
+        int id = (int) idRnd +1;
+        final int prime = 11 + id;
         int result = 1;
         result = prime * result + ((lastname == null) ? 0 : lastname.hashCode());
         result = prime * result + ((firstname == null) ? 0 : firstname.hashCode());
-        result = prime * result + ((email == null) ? 0 : email.hashCode());
         result = prime * result + ((phone == null) ? 0 : phone.hashCode());
         return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Partecipanti other = (Partecipanti) obj;
-        if (lastname == null) {
-            if (other.lastname != null)
-                return false;
-        } else if (!lastname.equals(other.lastname))
-            return false;
-        if (firstname == null) {
-            if (other.firstname != null)
-                return false;
-        } else if (!firstname.equals(other.firstname))
-            return false;
-        if (email == null) {
-            if (other.email != null)
-                return false;
-        } else if (!email.equals(other.email))
-            return false;
-        if (phone == null) {
-            if (other.phone != null)
-                return false;
-        } else if (!phone.equals(other.phone))
-            return false;
-        return true;
     }
 
     @Override
