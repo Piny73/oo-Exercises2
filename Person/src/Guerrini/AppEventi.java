@@ -9,10 +9,16 @@ public class AppEventi {
         System.out.println("Benventuo nella app EVENTI: "); 
         
         Evento event = new Evento("Concerto di musica da camera", "Ravello", "Musica classica eseguita da artisti d'eccezione!", LocalDateTime.of(2024, 8, 15, 20, 30));
-        System.out.println(event.toString());
+        Partecipanti p;
+        p = new Partecipanti("Salemme", "Giuseppina", "Piny73@gmail.com","3480087652");
+        event.addIdPartecipant(p.getId());
+        p = new Partecipanti("Dente", "Massimiliano", "Massi67@gmail.com","3480087331");
+        event.addIdPartecipant(p.getId());
 
-        Partecipanti p = new Partecipanti("Salemme", "Giuseppina", "Piny73@gmail.com","3480087652", Partecipanti.getId(result));
-        System.out.println(p.toString());
+        event.printListId();
+        
+        
+       
     
     }    
 }

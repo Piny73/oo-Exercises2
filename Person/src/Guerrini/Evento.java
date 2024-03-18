@@ -13,19 +13,23 @@ public class Evento {
     private ArrayList<Long> listIdPart = new ArrayList<>();
 
     public boolean addIdPartecipant(long id) {
-
         for (long i : listIdPart) {
-            if (i == id)
-                ;
-            {
-                System.out.println("id già presente!");
+            if (i == id){ // id già presengte
                 return false;
             }
         }
         // aggiungo alla lista
-        listIdPart.add(id);
-        System.out.println("id aggiunto!");
+        listIdPart.add(id); // id aggiunto
         return true;
+    }
+
+    public long[] getListIdPart(){
+        long[] ris = new long [listIdPart.size()];
+        for (int j = 0; j<ris.length; j++){
+            ris[j] = listIdPart.get(j);
+        }
+        return ris;
+
     }
 
     public Evento(String eventitle, String location, String description, LocalDateTime dateandtime) {
@@ -108,6 +112,10 @@ public class Evento {
 
     public void setDateandtime(LocalDateTime dateandtime) {
         this.dateandtime = dateandtime;
+    }
+    public void printListId (){
+        for (long id : listIdPart)
+        System.out.println(id);
     }
 
 }
