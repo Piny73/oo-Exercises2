@@ -36,12 +36,17 @@ public class Evento {
         this.eventitle = eventitle;
         this.location = location;
         this.description = description;
-        this.dateandtime = dateandtime;
+        this.dateandtime = LocalDateTime.now();
     }
+
+   
+
+   
 
     public Evento(String eventitle, String location) {
         this.eventitle = eventitle;
         this.location = location;
+        this.dateandtime = LocalDateTime.now();
     }
 
     public String getEventitle() {

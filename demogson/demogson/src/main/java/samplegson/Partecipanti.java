@@ -10,7 +10,7 @@ public class Partecipanti {
     
     
 
-    public Partecipanti(long id, String lastname, String firstname, String email, String phone) {
+    public Partecipanti(String lastname, String firstname, String email, String phone) {
         this.id = creaId();
         this.lastname = lastname;
         this.firstname = firstname;
