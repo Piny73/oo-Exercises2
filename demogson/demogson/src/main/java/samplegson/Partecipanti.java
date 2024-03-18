@@ -1,19 +1,21 @@
-package Guerrini;
+package samplegson;
 
 public class Partecipanti {
 
+    private long id;
     private String lastname = "";
     private String firstname = "";
     private String email = "";
-    private String phone = "";
-    private long id;
+    private String phone = "";  
     
-    public Partecipanti(String lastname, String firstname, String email, String phone) {
+    
+
+    public Partecipanti(long id, String lastname, String firstname, String email, String phone) {
+        this.id = creaId();
         this.lastname = lastname;
         this.firstname = firstname;
         this.email = email;
         this.phone = phone;
-        this.id = creaId();
     }
 
     public Partecipanti(String lastname, String phone) {
@@ -54,7 +56,7 @@ public class Partecipanti {
         this.phone = phone;
     }
 
-    public long getId (){
+    public long getId(){
         return id;
     }
 
@@ -65,7 +67,7 @@ public class Partecipanti {
         double percRnd = Math.random(); 
         double idRnd = percRnd * 10;
         long id = (int) idRnd + 1;
-        final long prime = 11 + id;
+        final long prime = 31 + id;
         long result = 1;
         result = prime * result + ((lastname == null) ? 0 : lastname.hashCode());
         result = prime * result + ((firstname == null) ? 0 : firstname.hashCode());
@@ -75,11 +77,14 @@ public class Partecipanti {
 
     @Override
     public String toString() {
-        return "Partecipanti [lastname=" + lastname + ", firstname=" + firstname + ", email=" + email + ", phone="
-                + phone + ", id=" + id + "]";
+        return "Partecipanti [id=" + id + ", lastname=" + lastname + ", firstname=" + firstname + ", email=" + email
+                + ", phone=" + phone + "]";
     }
 
    
 
+  
+
     
 }
+
