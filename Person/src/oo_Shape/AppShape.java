@@ -3,9 +3,8 @@ package oo_Shape;
 public class AppShape {
 
         public static void main(String[] args) {
-
-            Shape shape = new Shape();
-            System.out.println(.toString());
-            System.out.println("L'Area del rettangolo è: " + ());
+            Rectangle rectangle = new Rectangle(3, 10);
+            int area = rectangle.getArea();
+            System.out.println("L'Area del rettangolo è: " + area);
         }
 }
