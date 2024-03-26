@@ -16,9 +16,9 @@ public class MainWindow extends JFrame {
     JButton add, sub, mul, div;
     JLabel result;
 
-    public MainWindow(String title){
-        super (title);
-        this.setBounds(200, 200, 500 , 300);
+    public MainWindow(String title) {
+        super(title);
+        this.setBounds(1300, 200, 500, 300);
         this.setLayout(new FlowLayout(FlowLayout.CENTER));
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         op1 = new JTextField(10);
@@ -37,16 +37,30 @@ public class MainWindow extends JFrame {
         this.add(result);
         // ascoltare il click
         add.addActionListener(this::onAdd);
+        sub.addActionListener(this::onSub);
     }
 
-    private void onAdd(ActionEvent e){   
-        try {     
-        int v1 = Integer.parseInt(op1.getText());
-        int v2 = Integer.parseInt(op2.getText());
-        int ris = v1 + v2;
-        result.setText("Il risultato è: " + ris);
-        } catch (Exception ex){
-            JOptionPane.showMessageDialog(this,"Numeri non validi!");
+    private void onAdd(ActionEvent e) {
+        try {
+            int v1 = Integer.parseInt(op1.getText());
+            int v2 = Integer.parseInt(op2.getText());
+            int ris = v1 + v2;
+            result.setText("Il risultato è: " + ris);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Numeri non validi!");
+            op1.setText("");
+            op2.setText("");
+        }
+    }
+
+    private void onSub(ActionEvent e) {
+        try {
+            int v1 = Integer.parseInt(op1.getText());
+            int v2 = Integer.parseInt(op2.getText());
+            int ris = v1 - v2;
+            result.setText("Il risultato è: " + ris);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Numeri non validi!");
             op1.setText("");
             op2.setText("");
         }
