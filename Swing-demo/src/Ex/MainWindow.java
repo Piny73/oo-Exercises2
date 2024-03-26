@@ -1,7 +1,7 @@
 package Ex;
 
 import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
+
 import java.util.function.ToDoubleBiFunction;
 
 import javax.swing.JButton;
