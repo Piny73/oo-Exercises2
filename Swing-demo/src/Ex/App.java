@@ -3,15 +3,17 @@ package Ex;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
 public class App {
     public static void main(String[] args) {        
 
         JFrame finestra = new JFrame("Demo Swing");
         finestra.setSize(800, 600);
-        finestra.setLocation(450, 200);
+        finestra.setLocation(500, 200);
         FlowLayout fl = new FlowLayout(FlowLayout.LEFT);
         finestra.setLayout(fl);
         // finestra.setResizable(false); // non posso ingrandirla o rimpicciolirla
@@ -19,10 +21,15 @@ public class App {
         finestra.add(label);
         JLabel label1 = new JLabel("from TSP");
         finestra.add(label1);
-        JButton btn = new JButton("ClickMe"); // aggiungo un bottone
+        MioButton btn = new MioButton("ClickMe"); // aggiungo un bottone
+       // btn.addActionListener(e -> System.out.println("clickMe"));
+        btn.addActionListener (e->System.out.println("lambda click listner"));
+        btn.addActionListener (e->JOptionPane.showMessageDialog(btn, "clicked!!!"));
         finestra.add(btn);
         finestra.setVisible(true);
         finestra.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // il main termina ma il sottoprogramma non termina
         
     }
-}
+    
+    }
+
