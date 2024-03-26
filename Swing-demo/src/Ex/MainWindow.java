@@ -37,13 +37,13 @@ public class MainWindow extends JFrame {
         this.add(div);
         this.add(result);
         // ascoltare il click
-        add.addActionListener(v-> this.calculate((a,b) -> a+b));
-        sub.addActionListener(v-> this.calculate((a,b) -> a-b));
-        mul.addActionListener(v-> this.calculate((a,b) -> a*b));
-        div.addActionListener(v-> this.calculate((a,b) -> (double)a/(double)b));
+        add.addActionListener(v -> this.calculate((a, b) -> a + b));
+        sub.addActionListener(v -> this.calculate((a, b) -> a - b));
+        mul.addActionListener(v -> this.calculate((a, b) -> a * b));
+        div.addActionListener(v -> this.calculate((a, b) -> (double) a / (double) b));
     }
 
-    private void calculate(ToDoubleBiFunction<Integer, Integer> func){
+    private void calculate(ToDoubleBiFunction<Integer, Integer> func) {
         try {
             int input1 = Integer.parseInt(op1.getText());
             int input2 = Integer.parseInt(op2.getText());
@@ -54,7 +54,5 @@ public class MainWindow extends JFrame {
             op1.setText("");
             op2.setText("");
         }
-
-        
     }
 }
