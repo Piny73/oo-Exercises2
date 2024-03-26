@@ -11,14 +11,28 @@ import javax.swing.WindowConstants;
 public class MainWindow extends JFrame {
 
     JTextField op1, op2;
-    JButton add, sub, sum, div;
+    JButton add, sub, mul, div;
     JLabel result;
 
     public MainWindow(String title){
         super (title);
-        this.setBounds(200, 200, 300 , 200);
+        this.setBounds(200, 200, 500 , 300);
         this.setLayout(new FlowLayout(FlowLayout.CENTER));
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        op1 = new JTextField(10);
+        op2 = new JTextField(10);
+        add = new JButton("+");
+        sub = new JButton("-");
+        mul = new JButton("*");
+        div = new JButton("/");
+        result = new JLabel();
+        this.add(op1);
+        this.add(op2);
+        this.add(add);
+        this.add(sub);
+        this.add(mul);
+        this.add(div);
+        this.add(result);
     }
 
 }
