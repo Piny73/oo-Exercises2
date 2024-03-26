@@ -8,7 +8,7 @@ import javax.swing.WindowConstants;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
-public class App {
+public class AppSwing {
     public static void main(String[] args) {        
 
         JFrame finestra = new JFrame("Demo Swing");
