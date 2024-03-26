@@ -43,16 +43,23 @@ public class MainWindow extends JFrame {
         div.addActionListener(v -> this.calculate((a, b) -> (double) a / (double) b));
     }
 
-    private void calculate(ToDoubleBiFunction<Integer, Integer> func) {
-        try {
-            int input1 = Integer.parseInt(op1.getText());
-            int input2 = Integer.parseInt(op2.getText());
-            double res = func.applyAsDouble(input1, input2);
-            result.setText("Il risultato è: " + res);
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, "Numeri non validi!");
-            op1.setText("");
-            op2.setText("");
-        }
+    private void onAdd(ActionEvent e) {
+        int res = converInput((op1)) + converInput((op2));
+        result.setText("Il Risultato è: " + res);
     }
+
+
+    private void onSub(ActionEvent e) {
+        int res = converInput((op1)) - converInput((op2));
+        result.setText("Il Risultato è: " + res);
+    }
+   
+    private int converInput(JTextField input){
+        try{
+            return Integer.parseInt(input.getText());
+        }catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Numeri non validi!");
+            input.setText("");
+            return 0;
+
 }
