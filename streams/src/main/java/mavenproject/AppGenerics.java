@@ -4,7 +4,7 @@ public class AppGenerics {
 
     public static void main(String[] args) {
 
-        Box<Person> a  = new Box<>(new Person("mario", "rossi"));
+        Box<Person> a = new Box<>(new Person("mario", "rossi"));
 
         System.out.println(a.getElement());
         System.out.println(AppGenerics.<Integer>somma(10, 20));
@@ -17,16 +17,17 @@ public class AppGenerics {
     }
 }
 
-    class Box<E> {
-        private E element;
+class Box<E> {
+    private E element;
 
-        public Box(E element) {
-            this.element = element;
-        }
+    public Box(E element) {
+        this.element = element;
+    }
 
-        public E getElement() {
-            return element;
-        }
+    public E getElement() {
+        return element;
     }
-    record Person(String fname, String lname) {
-    }
+}
+
+record Person(String fname, String lname) {
+}
