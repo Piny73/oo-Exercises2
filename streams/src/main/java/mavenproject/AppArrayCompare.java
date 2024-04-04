@@ -22,6 +22,6 @@ public class AppArrayCompare {
         System.out.println("Elementi dei due Array:");
         System.out.println("arr1: " + Arrays.toString(arr1));
         System.out.println("arr2: " + Arrays.toString(arr2));
-        System.out.println("\nCompare arr1 and arr2: " + compare_Arrays(arr1, arr2));
+        System.out.println("\nLa comparazione dei due array è: " + compare_Arrays(arr1, arr2));
     }
 }
