@@ -30,5 +30,4 @@ public class App {
         System.out.println("IL PROGRAMMA TERMINA CORRETTAMENTE");
     }
 }
-// c:\\Users\\utentepc\\Documents\\Except.txt
-// C:\\Users\\utentepc\\Documents\\Except.txt
+// C:\Users\\utentepc\\Documents\\oo-Exercises\\exceptions\\src\\Exercises\\Except.txt
